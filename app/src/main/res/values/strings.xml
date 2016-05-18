@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Estrenos</string>
     <string name="no_short_des">Pelicula sin Sinopsis</string>
+    <string name="nav_home">Inicio</string>
+    <string name="nav_cinemas">Cinemas</string>
+    <string name="nav_favorites">Favoritos</string>
+    <string name="nav_preference">Preferencias</string>
+    <string name="nav_perfil">Perfil</string>
+    <string name="nav_logout">Cerrar Sesion</string>
 </resources>

@@ -5,4 +5,9 @@
     <dimen name="img_H">180dp</dimen>
     <dimen name="small">10dp</dimen>
     <dimen name="icon">28dp</dimen>
+    <dimen name="promo_img_h">230dp</dimen>
+    <dimen name="promo_entidad">80dp</dimen>
+    <dimen name="medium">20dp</dimen>
+    <dimen name="head">160dp</dimen>
+    <dimen name="head_prfile">60dp</dimen>
 </resources>
