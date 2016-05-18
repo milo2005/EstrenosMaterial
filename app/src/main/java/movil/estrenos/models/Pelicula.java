@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by Dario Chamorro on 11/05/2016.
  */
-public class Pelicula {
+public class Pelicula implements Item {
 
     String nombre, director, sinopsis
             , descripcion,imagen, duracion;
@@ -65,5 +65,10 @@ public class Pelicula {
 
     public void setFechaEstreno(Date fechaEstreno) {
         this.fechaEstreno = fechaEstreno;
+    }
+
+    @Override
+    public int getType() {
+        return TYPE_PELICULA;
     }
 }

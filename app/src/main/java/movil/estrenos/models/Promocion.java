@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by Dario Chamorro on 13/05/2016.
  */
-public class Promocion {
+public class Promocion implements Item {
 
     String descripcion, titulo, entidad, imagenPromo, imagenEntidad;
     Date fecha;
@@ -56,5 +56,10 @@ public class Promocion {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    @Override
+    public int getType() {
+        return TYPE_PROMOCION;
     }
 }

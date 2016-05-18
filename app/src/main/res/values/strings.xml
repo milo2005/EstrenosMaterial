@@ -7,4 +7,6 @@
     <string name="nav_preference">Preferencias</string>
     <string name="nav_perfil">Perfil</string>
     <string name="nav_logout">Cerrar Sesion</string>
+    <string name="open_menu">Opciones de Estrenos</string>
+    <string name="close_menu">Opciones cerradas</string>
 </resources>

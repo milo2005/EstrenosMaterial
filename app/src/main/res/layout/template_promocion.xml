@@ -11,63 +11,78 @@
             type="movil.estrenos.models.Promocion"/>
     </data>
 
-    <RelativeLayout
-        android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/img"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/promo_img_h"
-            android:background="#333333"
-            app:imgUrl="@{promo.imagenPromo}"
-            />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
 
-        <ImageView
-            android:id="@+id/entidadImg"
-            android:layout_width="@dimen/promo_entidad"
-            android:layout_height="@dimen/promo_entidad"
-            android:background="#444444"
-            android:layout_alignBottom="@id/img"
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/small"
-            app:imgUrl="@{promo.imagenEntidad}"
-            />
+            >
 
-        <TextView
-            style="@style/Base.TextAppearance.AppCompat.Body2"
-            android:id="@+id/fecha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:paddingRight="@dimen/small"
-            tools:text="Fecha"
-            android:layout_alignBottom="@id/entidadImg"
-            android:layout_toRightOf="@id/entidadImg"
-            app:textDate="@{promo.fecha}"
-            />
+            <RelativeLayout
+                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/promo_img_h"
+                    android:background="#333333"
+                    android:scaleType="centerCrop"
+                    app:imgUrl="@{promo.imagenPromo}"
+                    />
 
-        <TextView
-            style="@style/Base.TextAppearance.AppCompat.Title"
-            android:id="@+id/entidad"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:text="@{promo.entidad}"
-            android:layout_toRightOf="@id/entidadImg"
-            android:layout_above="@id/fecha"
-            tools:text="Royal Films"
-            />
+                <ImageView
+                    android:id="@+id/entidadImg"
+                    android:layout_width="@dimen/promo_entidad"
+                    android:layout_height="@dimen/promo_entidad"
+                    android:background="#444444"
+                    android:layout_alignBottom="@id/img"
+                    android:layout_margin="@dimen/small"
+                    android:scaleType="centerCrop"
+                    app:imgUrl="@{promo.imagenEntidad}"
+                    />
 
-        <TextView
-            style="@style/Base.TextAppearance.AppCompat.Headline"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingRight="@dimen/small"
-            android:layout_toRightOf="@id/entidadImg"
-            android:layout_above="@id/entidad"
-            android:textColor="#ffffff"
-            tools:text="Nombre de la Promocion"
-            android:text="@{promo.titulo}"
-            />
+                <TextView
+                    style="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:id="@+id/fecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
+                    android:paddingRight="@dimen/small"
+                    tools:text="Fecha"
+                    android:layout_alignBottom="@id/entidadImg"
+                    android:layout_toRightOf="@id/entidadImg"
+                    app:textDate="@{promo.fecha}"
+                    />
 
-    </RelativeLayout>
+                <TextView
+                    style="@style/Base.TextAppearance.AppCompat.Title"
+                    android:id="@+id/entidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
+                    android:text="@{promo.entidad}"
+                    android:layout_toRightOf="@id/entidadImg"
+                    android:layout_above="@id/fecha"
+                    tools:text="Royal Films"
+                    />
+
+                <TextView
+                    style="@style/Base.TextAppearance.AppCompat.Headline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="@dimen/small"
+                    android:layout_toRightOf="@id/entidadImg"
+                    android:layout_above="@id/entidad"
+                    android:textColor="#ffffff"
+                    tools:text="Nombre de la Promocion"
+                    android:text="@{promo.titulo}"
+                    />
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    </FrameLayout>
 </layout>

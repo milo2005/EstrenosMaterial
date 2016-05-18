@@ -29,7 +29,8 @@ public class Attrs {
 
     @BindingAdapter("app:textDate")
     public static void loadDate(TextView txt, Date date){
-        txt.setText(format.format(date));
+        if(date != null)
+            txt.setText(format.format(date));
     }
 
     @BindingAdapter("app:customFamily")
