@@ -19,14 +19,21 @@ import movil.estrenos.models.Promocion;
  * Created by Dario Chamorro on 11/05/2016.
  */
 public class PeliculaAdapter
-        extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+        extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener {
+
+    public interface OnItemClickAdapter{
+        void onClick(View v);
+    }
 
     Context context;
     List<Item> data;
+    OnItemClickAdapter onItemClickAdapter;
 
-    public PeliculaAdapter(Context context, List<Item> data) {
+    public PeliculaAdapter(Context context, List<Item> data
+            , OnItemClickAdapter onItemClickAdapter) {
         this.context = context;
         this.data = data;
+        this.onItemClickAdapter = onItemClickAdapter;
     }
 
     @Override
@@ -51,10 +58,15 @@ public class PeliculaAdapter
         Item i = data.get(position);
         if(i.getType() == Item.TYPE_PELICULA){
             Pelicula p = (Pelicula) i;
-            ((PeliculaViewHolder) holder).binding.setPelicula(p);
+            PeliculaViewHolder h = (PeliculaViewHolder) holder;
+            h.binding.setPelicula(p);
+            h.binding.getRoot().setOnClickListener(this);
+
         }else{
             Promocion p = (Promocion) i;
-            ((PromocionViewHolder)holder).binding.setPromo(p);
+            PromocionViewHolder h = (PromocionViewHolder) holder;
+            h.binding.setPromo(p);
+            h.binding.getRoot().setOnClickListener(this);
         }
 
     }
@@ -67,6 +79,11 @@ public class PeliculaAdapter
     @Override
     public int getItemViewType(int position) {
         return data.get(position).getType();
+    }
+
+    @Override
+    public void onClick(View v) {
+        onItemClickAdapter.onClick(v);
     }
 
     //region View Holder
